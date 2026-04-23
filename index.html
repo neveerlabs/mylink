@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>MyLink Neverlabs</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/neveerlabs/LinkBio/2922e2d34cde42863f037517d706b9a717e28db7/image/tab.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+    <header class="capsule-header">
+        <div class="header-logo">
+            <img src="https://raw.githubusercontent.com/neveerlabs/LinkBio/2922e2d34cde42863f037517d706b9a717e28db7/image/logo.jpg" alt="Logo">
+        </div>
+        <div class="header-title">Neverlabs</div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <i class="ri-more-2-fill"></i>
+        </button>
+        <div class="menu-dropdown" id="menuDropdown">
+            <a href="#" class="menu-item" data-i18n="home">
+                <i class="ri-home-4-line"></i>
+                <span>Beranda</span>
+            </a>
+            <a href="id/about.html" class="menu-item" data-i18n="about">
+                <i class="ri-user-line"></i>
+                <span>Tentang</span>
+            </a>
+            <a href="id/project.html" class="menu-item" data-i18n="projects">
+                <i class="ri-folder-line"></i>
+                <span>Proyek</span>
+            </a>
+            <a href="#" class="menu-item" data-i18n="contact">
+                <i class="ri-mail-line"></i>
+                <span>Kontak</span>
+            </a>
+            <div class="menu-divider"></div>
+            <button class="menu-item language-toggle" id="languageToggle">
+                <i class="ri-global-line"></i>
+                <span>Bahasa</span>
+                <span class="lang-badge" id="langBadge">ID</span>
+            </button>
+        </div>
+    </header>
+    <div class="banner-wrapper" id="bannerWrapper">
+        <video src="https://raw.githubusercontent.com/neveerlabs/LinkBio/2922e2d34cde42863f037517d706b9a717e28db7/image/banner.mp4" class="banner-video" id="bannerVideo" autoplay loop muted playsinline></video>
+        <div class="banner-fade"></div>
+        <div class="audio-indicator" id="audioIndicator">
+            <i class="ri-volume-up-fill"></i>
+        </div>
+        <button class="unmute-overlay-btn" id="unmuteBtn">
+            <i class="ri-volume-up-fill"></i>
+            <span>Tap untuk Suara</span>
+        </button>
+    </div>
+    <div class="username">@neverlabs</div>
+    <div class="container">
+        <div class="profile-card">
+            <div class="links">
+                <a href="https://instagram.com/neveerlabs" class="link-btn" target="_blank">
+                    <i class="ri-instagram-line link-icon"></i>
+                    <span data-i18n="mainAccount">Akun Utama</span>
+                    <i class="ri-arrow-right-s-line arrow-icon"></i>
+                </a>              
+                <a href="https://instagram.com/neverlabs.ai" class="link-btn" target="_blank">
+                    <i class="ri-instagram-line link-icon"></i>
+                    <span data-i18n="faxAccount">Akun Fax</span>
+                    <i class="ri-arrow-right-s-line arrow-icon"></i>
+                </a>              
+                <a href="mailto:tkjbelajar4@gmail.com" class="link-btn" target="_blank">
+                    <i class="ri-mail-line link-icon"></i>
+                    <span data-i18n="faxEmail">Email Fax</span>
+                    <i class="ri-arrow-right-s-line arrow-icon"></i>
+                </a>                
+                <a href="mailto:userlinuxorg@gmail.com" class="link-btn" target="_blank">
+                    <i class="ri-mail-line link-icon"></i>
+                    <span data-i18n="supportEmail">Email Support</span>
+                    <i class="ri-arrow-right-s-line arrow-icon"></i>
+                </a>
+                <div class="github-review-section">
+                    <div class="review-scroll-container" id="reviewScrollContainer">
+                        <div class="review-cards">
+                            <div class="review-card">
+                                <div class="review-blur-placeholder"></div>
+                                <img src="https://raw.githubusercontent.com/neveerlabs/LinkBio/2922e2d34cde42863f037517d706b9a717e28db7/image/tocket.png" alt="Repository 1" class="review-bg-image" loading="lazy">
+                                <div class="review-overlay">
+                                    <div class="review-header">
+                                        <i class="ri-github-fill review-github-icon"></i>
+                                        <span class="review-name">neveerlabs/Tocket</span>
+                                    </div>
+                                    <div class="review-footer">
+                                        <button class="share-review-btn" data-link="https://github.com/neveerlabs/Tocket">
+                                            <i class="ri-share-forward-line share-icon"></i>
+                                        </button>
+                                        <a href="https://github.com/neveerlabs/Tocket" class="visit-github-btn" target="_blank">
+                                            <span data-i18n="visitGithub">Kunjungi Github</span>
+                                            <i class="ri-github-fill btn-github-icon"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-card">
+                                <div class="review-blur-placeholder"></div>
+                                <img src="https://raw.githubusercontent.com/neveerlabs/LinkBio/2922e2d34cde42863f037517d706b9a717e28db7/image/OSM.png" alt="Repository 2" class="review-bg-image" loading="lazy">
+                                <div class="review-overlay">
+                                    <div class="review-header">
+                                        <i class="ri-github-fill review-github-icon"></i>
+                                        <span class="review-name">neveerlabs/OSM</span>
+                                    </div>
+                                    <div class="review-footer">
+                                        <button class="share-review-btn" data-link="https://github.com/neveerlabs/OSM">
+                                            <i class="ri-share-forward-line share-icon"></i>
+                                        </button>
+                                        <a href="https://github.com/neveerlabs/OSM" class="visit-github-btn" target="_blank">
+                                            <span data-i18n="visitGithub">Kunjungi Github</span>
+                                            <i class="ri-github-fill btn-github-icon"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-card">
+                                <div class="review-blur-placeholder"></div>
+                                <img src="https://raw.githubusercontent.com/neveerlabs/LinkBio/2922e2d34cde42863f037517d706b9a717e28db7/image/fuzzer.png" alt="Repository 3" class="review-bg-image" loading="lazy">
+                                <div class="review-overlay">
+                                    <div class="review-header">
+                                        <i class="ri-github-fill review-github-icon"></i>
+                                        <span class="review-name">neveerlabs/fuzzer</span>
+                                    </div>
+                                    <div class="review-footer">
+                                        <button class="share-review-btn" data-link="https://github.com/neveerlabs/fuzzer">
+                                            <i class="ri-share-forward-line share-icon"></i>
+                                        </button>
+                                        <a href="https://github.com/neveerlabs/fuzzer" class="visit-github-btn" target="_blank">
+                                            <span data-i18n="visitGithub">Kunjungi Github</span>
+                                            <i class="ri-github-fill btn-github-icon"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-dots" id="reviewDots"></div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://facebook.com/neveerlabs" class="social-icon" target="_blank" aria-label="Facebook">
+                    <i class="ri-facebook-fill"></i>
+                </a>
+                <a href="https://tiktok.com/@neverlabs" class="social-icon" target="_blank" aria-label="TikTok">
+                    <i class="ri-tiktok-fill"></i>
+                </a>
+                <a href="https://x.com/neverlabs291" class="social-icon" target="_blank" aria-label="X">
+                    <i class="ri-twitter-x-fill"></i>
+                </a>
+                <a href="https://wa.me/628561765372" class="social-icon" target="_blank" aria-label="WhatsApp">
+                    <i class="ri-whatsapp-fill"></i>
+                </a>
+                <a href="https://t.me/Neverlabs" class="social-icon" target="_blank" aria-label="Telegram">
+                    <i class="ri-telegram-fill"></i>
+                </a>
+            </div>           
+            <div class="footer-note">
+                © 2026 Neverlabs • All rights reserved.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="share-popup-overlay" id="sharePopupOverlay">
+    <div class="share-popup">
+        <h3 data-i18n="shareTitle">Bagikan Link</h3>
+        <div class="share-url-container">
+            <input type="text" id="shareUrlInput" readonly>
+            <button id="copyUrlBtn" data-i18n="copy">Copy</button>
+        </div>
+        <div class="share-options">
+            <button class="share-option" data-platform="whatsapp"><i class="ri-whatsapp-fill"></i></button>
+            <button class="share-option" data-platform="facebook"><i class="ri-facebook-fill"></i></button>
+            <button class="share-option" data-platform="instagram"><i class="ri-instagram-fill"></i></button>
+            <button class="share-option" data-platform="twitter"><i class="ri-twitter-x-fill"></i></button>
+            <button class="share-option" data-platform="reddit"><i class="ri-reddit-fill"></i></button>
+            <button class="share-option" data-platform="email"><i class="ri-mail-fill"></i></button>
+        </div>
+        <button class="close-popup-btn" id="closePopupBtn" data-i18n="close">Tutup</button>
+    </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
