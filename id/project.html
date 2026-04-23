@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Proyek · Neverlabs</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/tab.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/project.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+<div class="app">
+    <header class="capsule-header">
+        <a href="../index.html" class="header-back" aria-label="Kembali">
+            <i class="ri-arrow-left-line"></i>
+        </a>
+        <div class="header-title" data-i18n="pageTitle">Proyek</div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <i class="ri-more-2-fill"></i>
+        </button>
+        <div class="menu-dropdown" id="menuDropdown">
+            <a href="../index.html" class="menu-item" data-i18n="home">
+                <i class="ri-home-4-line"></i>
+                <span>Beranda</span>
+            </a>
+            <a href="about.html" class="menu-item" data-i18n="about">
+                <i class="ri-user-line"></i>
+                <span>Tentang</span>
+            </a>
+            <a href="project.html" class="menu-item" data-i18n="projects">
+                <i class="ri-folder-line"></i>
+                <span>Proyek</span>
+            </a>
+            <a href="#" class="menu-item" data-i18n="contact">
+                <i class="ri-mail-line"></i>
+                <span>Kontak</span>
+            </a>
+            <div class="menu-divider"></div>
+            <button class="menu-item language-toggle" id="languageToggle">
+                <i class="ri-global-line"></i>
+                <span data-i18n="language">Bahasa</span>
+                <span class="lang-badge" id="langBadge">ID</span>
+            </button>
+        </div>
+    </header>
+    <div class="project-content" id="projectContent"></div>
+    <div class="footer-note">
+        <span data-i18n="footerText">© 2026 Neverlabs • All rights reserved.</span>
+    </div>
+</div>
+<div class="readme-modal-overlay" id="readmeModalOverlay">
+    <div class="readme-modal">
+        <div class="readme-header">
+            <h3 id="readmeTitle">README.md</h3>
+            <button class="readme-close" id="readmeClose">&times;</button>
+        </div>
+        <div class="readme-body" id="readmeBody">
+            <div class="readme-loading">Memuat README...</div>
+        </div>
+    </div>
+</div>
+<script src="../js/project.js"></script>
+</body>
+</html>
