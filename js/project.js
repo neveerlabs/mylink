@@ -62,6 +62,13 @@
                         tags: ['requests', 'colorama', 'pyyaml'],
                         image: 'https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/fuzzer.png',
                         repo: 'neveerlabs/fuzzer'
+                },
+                {
+                    name: 'Interface', desc: {
+                        id: `Alat Bantu Pengujian Jaringan pribadi`, en: `` },
+                        tags: [`subprocess`, `re`, `sys`, `os`, `socket`, `fcntl`, `struct`, `platform`, `Thread`, `Queue`, `time`, `signal`, `questionary`, `arp-scan`, `nmap`, `curl`, `ethtool`, `iproute2`, `iwgetid`, `sudo`, `nmcli`],
+                        image: `https://raw.githubusercontent.com/neveerlabs/mylink/39d87d84c26280d4b54ec9af2b5f136b43948f46/image/interface.png`,
+                        repo: `neveerlabs/Interface`
                 }
             ]
         },
