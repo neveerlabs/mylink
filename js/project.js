@@ -73,7 +73,7 @@
             ]
         },
         {
-            category: { id: 'E‑commerce', en: 'E‑commerce' },
+            category: { id: 'Toko Digital', en: 'E‑commerce' },
             description: { id: 'Platform jual beli dan toko online', en: 'Online store and marketplace platforms' },
             items: [
                 {
@@ -101,7 +101,47 @@
                         id: 'Forum diskusi ringan', en: 'Lightweight discussion forum' },
                         tags: ['Laravel', 'Vue.js', 'mysql2'],
                         image: 'https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/logo.jpg',
-                        repo: 'neveerlabs/diskusi'
+                        repo: ''
+                },
+                {
+                    name: 'QR Studio', desc: {
+                        id: 'Sistem Absensi Berbasis QR Code', en: `QR Code-Based Attendance System` },
+                        tags: [`express`, `mysql2`, `cors`, `dotenv`],
+                        image: 'https://raw.githubusercontent.com/neveerlabs/mylink/3a913e612dea74302dc009df10daef7de740f7a7/image/QR-Studio.png',
+                        repo: 'neveerlabs/QR-Studio'
+                },
+                {
+                    name: `Kitabku`, desc: {
+                        id: ``, en: `` },
+                        tags: [`HTML5`, `CSS3`,`JavaScript (ES6)`, `PrayTimes.js`, `OpenStreetMap`, `Google Fonts`, `Amiri`, `Inter`, `Font Awesome 6.`],
+                        image: `https://raw.githubusercontent.com/neveerlabs/mylink/5f0d7eef17eaf0ba3e02500150a240060b13be34/image/Kitabku.png`,
+                        repo: `neveerlabs/Kitabku`
+                }
+            ]
+        },
+        {
+            category: { id: `Permainan`, en: `Games` },
+            description: { id: `Proyek game interaktif`, en: `Interactive game projects` },
+            items: [
+                {
+                    name: `Tic Tac Toe Games`, desc: {
+                        id: `Kecerdasan Buatan Tic-Tac-Toe — Deep Q-Learning`, en: `Tic-Tac-Toe AI — Deep Q-Learning` },
+                        tags: [`HTML5`, `CSS3`,`Vanilla JS (ES6+)`, `Q-Learning`, `Canvas 2D`, `IndexedDB`],
+                        image: `https://raw.githubusercontent.com/neveerlabs/mylink/633ca466214ea1d20036651841b8702276e5f4ea/image/Tic-Tac-Toe.png`,
+                        repo: `neveerlabs/Tic-Tac-Toe`
+                }
+            ]
+        },
+        {
+            category: { id: `Eksperimen Web`, en: `Web Experiments` },
+            description: { id: ``, en: `` },
+            items: [
+                {
+                    name: `ChronoDeck`, desc: {
+                        id: `Eksplorasi teknologi web modern — dari visual 3D, shader real‑time, Web Audio, hingga integrasi API publik. Setiap proyek adalah playground untuk ide dan pendekatan baru.`, en: `Exploring modern web technologies — from 3D visuals, real‑time shaders, Web Audio, to public API integrations. Each project is a playground for new ideas and approaches.` },
+                        tags: [`HTML5`, `CSS3`, `JavaScript ES6 Modules`, `Three.js`, `Web Audio API`, `Aladhan Prayer API`, `Geolocation API`, `Font Awesome 6`],
+                        image: `https://raw.githubusercontent.com/neveerlabs/mylink/5f0d7eef17eaf0ba3e02500150a240060b13be34/image/ChronoDeck.png`,
+                        repo: `neveerlabs/ChronoDeck`
                 }
             ]
         }
