@@ -65,7 +65,7 @@
                 },
                 {
                     name: 'Interface', desc: {
-                        id: `Alat Bantu Pengujian Jaringan pribadi`, en: `` },
+                        id: `Alat Bantu Pengujian Jaringan pribadi`, en: `Internal Network Testing Tool` },
                         tags: [`subprocess`, `re`, `sys`, `os`, `socket`, `fcntl`, `struct`, `platform`, `Thread`, `Queue`, `time`, `signal`, `questionary`, `arp-scan`, `nmap`, `curl`, `ethtool`, `iproute2`, `iwgetid`, `sudo`, `nmcli`],
                         image: `https://raw.githubusercontent.com/neveerlabs/mylink/39d87d84c26280d4b54ec9af2b5f136b43948f46/image/interface.png`,
                         repo: `neveerlabs/Interface`
