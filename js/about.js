@@ -3,6 +3,7 @@
     const menuDropdown = document.getElementById('menuDropdown');
     const languageToggle = document.getElementById('languageToggle');
     const langBadge = document.getElementById('langBadge');
+    const loadingScreen = document.getElementById('loadingScreen');
     let currentLang = 'id';
 
     const translations = {
@@ -14,7 +15,7 @@
             contact: 'Kontak',
             language: 'Bahasa',
             badgeText: 'Program Digital',
-            bioText: 'Kami membangun pengalaman web modern dengan fokus pada kesederhanaan dan performa. Dari landing page interaktif hingga aplikasi full‑stack — kami mewujudkan ide menjadi kenyataan.',
+            bioText: 'Saya membangun pengalaman web modern dengan fokus pada kesederhanaan dan performa. Dari landing page interaktif hingga aplikasi full‑stack — saya mewujudkan ide menjadi kenyataan.',
             location: 'Depok, ID',
             website: 'MyLink',
             email: 'userlinuxorg@gmail.com',
@@ -30,7 +31,7 @@
             contact: 'Contact',
             language: 'Language',
             badgeText: 'Digital Program',
-            bioText: 'We build modern web experiences with a focus on simplicity and performance. From interactive landing pages to full‑stack applications — we turn ideas into reality.',
+            bioText: 'I build modern web experiences with a focus on simplicity and performance. From interactive landing pages to full‑stack applications — I turn ideas into reality.',
             location: 'Depok, ID',
             website: 'MyLink',
             email: 'userlinuxorg@gmail.com',
@@ -81,6 +82,27 @@
             applyLanguage(newLang);
             menuDropdown.classList.remove('active');
         });
+    }
+
+    function hideLoadingScreen() {
+        if (loadingScreen) {
+            loadingScreen.classList.add('fade-out');
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }
+    }
+
+    const avatarImg = document.querySelector('.avatar-img');
+    if (avatarImg) {
+        if (avatarImg.complete) {
+            hideLoadingScreen();
+        } else {
+            avatarImg.addEventListener('load', hideLoadingScreen);
+            avatarImg.addEventListener('error', hideLoadingScreen);
+        }
+    } else {
+        hideLoadingScreen();
     }
 
     const style = document.createElement('style');
