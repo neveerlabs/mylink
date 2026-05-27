@@ -4,6 +4,46 @@
     "description": { "id": "Alat produktivitas dan pengembangan", "en": "Productivity and development tools" },
     "items": [
       {
+        "name": "Termux Config",
+        "desc": {
+          "id": "Konfigurasi Zsh untuk Termux – dilengkapi autosuggestions, syntax highlighting, prompt kustom dengan informasi direktori dan virtual env, serta history yang bersih. Mendukung warna, ikon, dan key binding yang ergonomis.",
+          "en": "Zsh configuration for Termux – featuring autosuggestions, syntax highlighting, custom prompt with directory and virtual env info, and clean history. Supports colors, icons, and ergonomic key bindings."
+        },
+        "tags": [
+          "zsh",
+          "zsh-autosuggestions",
+          "zsh-syntax-highlighting",
+          "prompt",
+          "termux",
+          "history",
+          "key-bindings"
+        ],
+        "image": "https://raw.githubusercontent.com/neveerlabs/mylink/main/image/Termux.jpg",
+        "repo": "neveerlabs/Termux-Config"
+      },
+      {
+        "name": "BG-Remover",
+        "desc": {
+          "id": "Penghapus latar belakang gambar berbasis AI dengan dua versi: `remove.py` (ringan, Tkinter, 4 model) dan `remover.py` (pro, CustomTkinter, 10+ model termasuk BiRefNet, fitur edge refinement, auto enhance, denoise, logging real‑time). Sepenuhnya offline, tidak mengirim data ke server.",
+          "en": "AI‑powered background remover with two versions: `remove.py` (lightweight, Tkinter, 4 models) and `remover.py` (pro, CustomTkinter, 10+ models including BiRefNet, edge refinement, auto enhance, denoise, real‑time logging). Fully offline, no data sent to server."
+        },
+        "tags": [
+          "rembg",
+          "U2‑Net",
+          "BiRefNet",
+          "CustomTkinter",
+          "Tkinter",
+          "OpenCV",
+          "Pillow",
+          "scikit‑image",
+          "AI",
+          "background removal",
+          "offline"
+        ],
+        "image": "https://raw.githubusercontent.com/neveerlabs/mylink/main/image/BG-Remover.png",
+        "repo": "neveerlabs/BG-Remover"
+      },
+      {
         "name": "Tocket",
         "desc": { "id": "Aplikasi pesan real‑time modern", "en": "Modern real‑time messaging app" },
         "tags": ["cryptography", "requests", "rich", "prompt_toolkit", "inquirer"],
@@ -57,6 +97,25 @@
     "category": { "id": "Komunitas", "en": "Community" },
     "description": { "id": "Proyek sosial dan forum", "en": "Social and forum projects" },
     "items": [
+      {
+        "name": "My Diary",
+        "desc": {
+          "id": "Aplikasi jurnal digital pribadi dengan dukungan posting teks, gambar/video, like, komentar, dan pencarian real‑time. Dibangun dengan Vue 3 di frontend dan Express + MySQL di backend. Fitur double‑click like animasi, autoplay video saat scroll, serta rate limiting untuk keamanan.",
+          "en": "Personal digital diary app with text, image/video posts, likes, comments, and real‑time search. Built with Vue 3 frontend and Express + MySQL backend. Features double‑click like animation, video autoplay on scroll, and rate limiting for security."
+        },
+        "tags": [
+          "Vue 3",
+          "Express.js",
+          "MySQL2",
+          "Axios",
+          "CORS",
+          "Helmet",
+          "express-rate-limit",
+          "Intersection Observer API"
+        ],
+        "image": "https://raw.githubusercontent.com/neveerlabs/mylink/main/image/Diary.png",
+        "repo": "neveerlabs/Diary"
+      },
       {
         "name": "Riyadh Community's",
         "desc": { "id": "Forum diskusi ringan", "en": "Lightweight discussion forum" },
