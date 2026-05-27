@@ -10,6 +10,19 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div id="loadingScreen">
+    <div class="loading-character-container">
+        <div class="loading-character">
+            <div class="head"></div>
+            <div class="body"></div>
+            <div class="arm left"></div>
+            <div class="arm right"></div>
+            <div class="leg left"></div>
+            <div class="leg right"></div>
+        </div>
+    </div>
+    <p class="loading-text">Memuat halaman...</p>
+</div>
 <div class="app">
     <header class="capsule-header">
         <div class="header-logo">
@@ -66,12 +79,12 @@
                 </a>              
                 <a href="https://instagram.com/neverlabs.ai" class="link-btn" target="_blank">
                     <i class="ri-instagram-line link-icon"></i>
-                    <span data-i18n="faxAccount">Akun Fax</span>
+                    <span data-i18n="faxAccount">Akun Faq</span>
                     <i class="ri-arrow-right-s-line arrow-icon"></i>
                 </a>              
                 <a href="mailto:tkjbelajar4@gmail.com" class="link-btn" target="_blank">
                     <i class="ri-mail-line link-icon"></i>
-                    <span data-i18n="faxEmail">Email Fax</span>
+                    <span data-i18n="faxEmail">Email Faq</span>
                     <i class="ri-arrow-right-s-line arrow-icon"></i>
                 </a>                
                 <a href="mailto:userlinuxorg@gmail.com" class="link-btn" target="_blank">
@@ -81,65 +94,7 @@
                 </a>
                 <div class="github-review-section">
                     <div class="review-scroll-container" id="reviewScrollContainer">
-                        <div class="review-cards">
-                            <div class="review-card">
-                                <div class="review-blur-placeholder"></div>
-                                <img src="https://raw.githubusercontent.com/neveerlabs/mylink/main/image/tocket.png" alt="Repository 1" class="review-bg-image" loading="lazy">
-                                <div class="review-overlay">
-                                    <div class="review-header">
-                                        <i class="ri-github-fill review-github-icon"></i>
-                                        <span class="review-name">neveerlabs/Tocket</span>
-                                    </div>
-                                    <div class="review-footer">
-                                        <button class="share-review-btn" data-link="https://github.com/neveerlabs/Tocket">
-                                            <i class="ri-share-forward-line share-icon"></i>
-                                        </button>
-                                        <a href="https://github.com/neveerlabs/Tocket" class="visit-github-btn" target="_blank">
-                                            <span data-i18n="visitGithub">Kunjungi Github</span>
-                                            <i class="ri-github-fill btn-github-icon"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="review-card">
-                                <div class="review-blur-placeholder"></div>
-                                <img src="https://raw.githubusercontent.com/neveerlabs/mylink/main/image/OSM.png" alt="Repository 2" class="review-bg-image" loading="lazy">
-                                <div class="review-overlay">
-                                    <div class="review-header">
-                                        <i class="ri-github-fill review-github-icon"></i>
-                                        <span class="review-name">neveerlabs/OSM</span>
-                                    </div>
-                                    <div class="review-footer">
-                                        <button class="share-review-btn" data-link="https://github.com/neveerlabs/OSM">
-                                            <i class="ri-share-forward-line share-icon"></i>
-                                        </button>
-                                        <a href="https://github.com/neveerlabs/OSM" class="visit-github-btn" target="_blank">
-                                            <span data-i18n="visitGithub">Kunjungi Github</span>
-                                            <i class="ri-github-fill btn-github-icon"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="review-card">
-                                <div class="review-blur-placeholder"></div>
-                                <img src="https://raw.githubusercontent.com/neveerlabs/mylink/main/image/fuzzer.png" alt="Repository 3" class="review-bg-image" loading="lazy">
-                                <div class="review-overlay">
-                                    <div class="review-header">
-                                        <i class="ri-github-fill review-github-icon"></i>
-                                        <span class="review-name">neveerlabs/fuzzer</span>
-                                    </div>
-                                    <div class="review-footer">
-                                        <button class="share-review-btn" data-link="https://github.com/neveerlabs/fuzzer">
-                                            <i class="ri-share-forward-line share-icon"></i>
-                                        </button>
-                                        <a href="https://github.com/neveerlabs/fuzzer" class="visit-github-btn" target="_blank">
-                                            <span data-i18n="visitGithub">Kunjungi Github</span>
-                                            <i class="ri-github-fill btn-github-icon"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="review-cards" id="reviewCardsContainer"></div>
                     </div>
                     <div class="review-dots" id="reviewDots"></div>
                 </div>
@@ -148,14 +103,14 @@
                 <a href="https://facebook.com/neveerlabs" class="social-icon" target="_blank" aria-label="Facebook">
                     <i class="ri-facebook-fill"></i>
                 </a>
-                <a href="https://tiktok.com/@neverlabs" class="social-icon" target="_blank" aria-label="TikTok">
-                    <i class="ri-tiktok-fill"></i>
-                </a>
                 <a href="https://x.com/neverlabs291" class="social-icon" target="_blank" aria-label="X">
                     <i class="ri-twitter-x-fill"></i>
                 </a>
-                <a href="https://wa.me/628561765372" class="social-icon" target="_blank" aria-label="WhatsApp">
-                    <i class="ri-whatsapp-fill"></i>
+                <a href="https://gihub.com/neveerlabs" class="social-icon" target="_blank" aria-label="Github">
+                    <i class="ri-github-fill"></i>
+                </a>
+                <a href="https://instagram.com/neveerlabs" class="social-icon" target="_blank" aria-label="Instagram">
+                    <i class="ri-instagram-fill"></i>
                 </a>
                 <a href="https://t.me/Neverlabs" class="social-icon" target="_blank" aria-label="Telegram">
                     <i class="ri-telegram-fill"></i>
