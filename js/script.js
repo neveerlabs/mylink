@@ -6,10 +6,20 @@
     const menuDropdown = document.getElementById('menuDropdown');
     const languageToggle = document.getElementById('languageToggle');
     const langBadge = document.getElementById('langBadge');
+    const reviewScrollContainer = document.getElementById('reviewScrollContainer');
+    const reviewCardsContainer = document.getElementById('reviewCardsContainer');
+    const dotsContainer = document.getElementById('reviewDots');
+    const sharePopupOverlay = document.getElementById('sharePopupOverlay');
+    const shareUrlInput = document.getElementById('shareUrlInput');
+    const copyBtn = document.getElementById('copyUrlBtn');
+    const closeBtn = document.getElementById('closePopupBtn');
+    const loadingScreen = document.getElementById('loadingScreen');
+
     let indicatorTimeout;
     let hasUserInteracted = false;
     let videoObserver = null;
     let currentLang = 'id';
+    let allProjects = [];
 
     const translations = {
         id: {
@@ -19,8 +29,8 @@
             contact: 'Kontak',
             language: 'Bahasa',
             mainAccount: 'Akun Utama',
-            faxAccount: 'Akun Fax',
-            faxEmail: 'Email Fax',
+            faxAccount: 'Akun Faq',
+            faxEmail: 'Email Faq',
             supportEmail: 'Email Support',
             visitGithub: 'Kunjungi Github',
             shareTitle: 'Bagikan Link',
@@ -35,8 +45,8 @@
             contact: 'Contact',
             language: 'Language',
             mainAccount: 'Main Account',
-            faxAccount: 'Fax Account',
-            faxEmail: 'Fax Email',
+            faxAccount: 'Faq Account',
+            faxEmail: 'Faq Email',
             supportEmail: 'Support Email',
             visitGithub: 'Visit Github',
             shareTitle: 'Share Link',
@@ -61,14 +71,12 @@
         });
         const unmuteSpan = unmuteBtn?.querySelector('span');
         if (unmuteSpan) unmuteSpan.textContent = translations[lang].tapForSound;
+        updateReviewCardsLanguage();
     }
 
-    if (languageToggle) {
-        languageToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const newLang = currentLang === 'id' ? 'en' : 'id';
-            applyLanguage(newLang);
-            menuDropdown.classList.remove('active');
+    function updateReviewCardsLanguage() {
+        document.querySelectorAll('.visit-github-btn span[data-i18n="visitGithub"]').forEach(span => {
+            span.textContent = translations[currentLang].visitGithub;
         });
     }
 
@@ -117,12 +125,8 @@
         hasUserInteracted = true;
         video.muted = false;
         showAudioIndicator(false);
-        if (unmuteBtn) {
-            unmuteBtn.classList.add('hidden');
-        }
-        if (video.paused) {
-            restartAndPlay();
-        }
+        if (unmuteBtn) unmuteBtn.classList.add('hidden');
+        if (video.paused) restartAndPlay();
     }
 
     if (menuToggle && menuDropdown) {
@@ -130,17 +134,24 @@
             e.stopPropagation();
             menuDropdown.classList.toggle('active');
         });
-
         document.addEventListener('click', function(e) {
             if (!menuToggle.contains(e.target) && !menuDropdown.contains(e.target)) {
                 menuDropdown.classList.remove('active');
             }
         });
-
         document.addEventListener('touchstart', function(e) {
             if (!menuToggle.contains(e.target) && !menuDropdown.contains(e.target)) {
                 menuDropdown.classList.remove('active');
             }
+        });
+    }
+
+    if (languageToggle) {
+        languageToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const newLang = currentLang === 'id' ? 'en' : 'id';
+            applyLanguage(newLang);
+            menuDropdown.classList.remove('active');
         });
     }
 
@@ -199,9 +210,7 @@
             }
         });
 
-        videoObserver = new IntersectionObserver(handleVisibility, {
-            threshold: 0.1
-        });
+        videoObserver = new IntersectionObserver(handleVisibility, { threshold: 0.1 });
         videoObserver.observe(video);
 
         if (video.paused && document.visibilityState === 'visible') {
@@ -211,173 +220,207 @@
         }
     }
 
-    const overlay = document.getElementById('sharePopupOverlay');
-    const urlInput = document.getElementById('shareUrlInput');
-    const copyBtn = document.getElementById('copyUrlBtn');
-    const closeBtn = document.getElementById('closePopupBtn');
-    let currentShareLink = '';
-
     function openSharePopup(link) {
-        currentShareLink = link;
-        urlInput.value = link;
-        overlay.classList.add('active');
+        shareUrlInput.value = link;
+        sharePopupOverlay.classList.add('active');
     }
 
     function closeSharePopup() {
-        overlay.classList.remove('active');
+        sharePopupOverlay.classList.remove('active');
     }
-
-    document.querySelectorAll('.share-review-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            const link = this.getAttribute('data-link');
-            openSharePopup(link);
-        });
-    });
 
     if (copyBtn) {
         copyBtn.addEventListener('click', function() {
-            urlInput.select();
+            shareUrlInput.select();
             document.execCommand('copy');
             const originalText = copyBtn.textContent;
-            copyBtn.textContent = currentLang === 'id' ? 'Tersalin!' : 'Copied!';
+            copyBtn.textContent = translations[currentLang].copy === 'Copy' ? 'Copied!' : 'Tersalin!';
             setTimeout(() => {
                 copyBtn.textContent = translations[currentLang].copy;
             }, 1500);
         });
     }
 
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeSharePopup);
-    }
-
-    overlay.addEventListener('click', function(e) {
-        if (e.target === overlay) closeSharePopup();
+    if (closeBtn) closeBtn.addEventListener('click', closeSharePopup);
+    sharePopupOverlay.addEventListener('click', function(e) {
+        if (e.target === sharePopupOverlay) closeSharePopup();
     });
 
     document.querySelectorAll('.share-option').forEach(option => {
         option.addEventListener('click', function() {
             const platform = this.getAttribute('data-platform');
-            const encodedLink = encodeURIComponent(currentShareLink);
+            const encodedLink = encodeURIComponent(shareUrlInput.value);
             const text = encodeURIComponent('Cek ini!');
             let shareUrl = '';
-
             switch(platform) {
-                case 'whatsapp':
-                    shareUrl = `https://wa.me/?text=${text}%20${encodedLink}`;
-                    break;
-                case 'facebook':
-                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedLink}`;
-                    break;
-                case 'instagram':
-                    alert('Instagram share via browser tidak mendukung langsung. Copy link manual.');
-                    return;
-                case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?url=${encodedLink}&text=${text}`;
-                    break;
-                case 'reddit':
-                    shareUrl = `https://www.reddit.com/submit?url=${encodedLink}&title=${text}`;
-                    break;
-                case 'email':
-                    shareUrl = `mailto:?subject=${text}&body=${encodedLink}`;
-                    break;
+                case 'whatsapp': shareUrl = `https://wa.me/?text=${text}%20${encodedLink}`; break;
+                case 'facebook': shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedLink}`; break;
+                case 'instagram': alert('Instagram share via browser tidak mendukung langsung. Copy link manual.'); return;
+                case 'twitter': shareUrl = `https://twitter.com/intent/tweet?url=${encodedLink}&text=${text}`; break;
+                case 'reddit': shareUrl = `https://www.reddit.com/submit?url=${encodedLink}&title=${text}`; break;
+                case 'email': shareUrl = `mailto:?subject=${text}&body=${encodedLink}`; break;
                 default: return;
             }
-
             if (shareUrl) window.open(shareUrl, '_blank');
         });
     });
 
-    const scrollContainer = document.getElementById('reviewScrollContainer');
-    const dotsContainer = document.getElementById('reviewDots');
-    const cards = document.querySelectorAll('.review-card');
+    function renderReviewCards(projects) {
+        reviewCardsContainer.innerHTML = '';
+        dotsContainer.innerHTML = '';
+        if (!projects.length) return;
 
-    if (scrollContainer && cards.length > 0) {
-        function generateDots() {
-            dotsContainer.innerHTML = '';
-            cards.forEach((_, index) => {
-                const dot = document.createElement('button');
-                dot.classList.add('review-dot');
-                dot.setAttribute('aria-label', `Slide ${index + 1}`);
-                dot.addEventListener('click', () => {
-                    scrollContainer.scrollTo({
-                        left: cards[index].offsetLeft - scrollContainer.offsetLeft,
-                        behavior: 'smooth'
-                    });
+        projects.forEach((project, index) => {
+            const card = document.createElement('div');
+            card.className = 'review-card';
+            card.innerHTML = `
+                <div class="review-blur-placeholder"></div>
+                <img src="${project.image}" alt="${project.name}" class="review-bg-image" loading="lazy">
+                <div class="review-overlay">
+                    <div class="review-header">
+                        <i class="ri-github-fill review-github-icon"></i>
+                        <span class="review-name">${project.repo || project.name}</span>
+                    </div>
+                    <div class="review-footer">
+                        <button class="share-review-btn" data-link="https://github.com/${project.repo}">
+                            <i class="ri-share-forward-line share-icon"></i>
+                        </button>
+                        <a href="https://github.com/${project.repo}" class="visit-github-btn" target="_blank">
+                            <span data-i18n="visitGithub">${translations[currentLang].visitGithub}</span>
+                            <i class="ri-github-fill btn-github-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+            reviewCardsContainer.appendChild(card);
+
+            const dot = document.createElement('button');
+            dot.className = 'review-dot';
+            dot.setAttribute('aria-label', `Slide ${index + 1}`);
+            dot.addEventListener('click', () => {
+                reviewScrollContainer.scrollTo({
+                    left: card.offsetLeft - reviewScrollContainer.offsetLeft,
+                    behavior: 'smooth'
                 });
-                dotsContainer.appendChild(dot);
             });
-        }
+            dotsContainer.appendChild(dot);
+        });
 
-        function updateActiveDot() {
-            const scrollLeft = scrollContainer.scrollLeft;
-            const containerWidth = scrollContainer.offsetWidth;
-            let activeIndex = 0;
+        const images = reviewCardsContainer.querySelectorAll('.review-bg-image');
+        images.forEach(img => {
+            if (img.complete) img.classList.add('loaded');
+            else img.addEventListener('load', () => img.classList.add('loaded'));
+        });
 
-            cards.forEach((card, index) => {
-                const cardLeft = card.offsetLeft - scrollContainer.offsetLeft;
-                const cardRight = cardLeft + card.offsetWidth;
-                if (scrollLeft >= cardLeft - containerWidth / 3 && scrollLeft < cardRight - containerWidth / 3) {
-                    activeIndex = index;
-                }
+        const shareBtns = reviewCardsContainer.querySelectorAll('.share-review-btn');
+        shareBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                openSharePopup(this.getAttribute('data-link'));
             });
+        });
+    }
 
-            const dots = dotsContainer.querySelectorAll('.review-dot');
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === activeIndex);
-            });
-        }
+    function updateActiveDot() {
+        if (!reviewScrollContainer || !dotsContainer) return;
+        const cards = reviewCardsContainer.querySelectorAll('.review-card');
+        const dots = dotsContainer.querySelectorAll('.review-dot');
+        if (!cards.length || !dots.length) return;
 
-        generateDots();
-        updateActiveDot();
+        const scrollLeft = reviewScrollContainer.scrollLeft;
+        const containerWidth = reviewScrollContainer.offsetWidth;
+        let activeIndex = 0;
 
+        cards.forEach((card, index) => {
+            const cardLeft = card.offsetLeft - reviewScrollContainer.offsetLeft;
+            const cardRight = cardLeft + card.offsetWidth;
+            if (scrollLeft >= cardLeft - containerWidth / 3 && scrollLeft < cardRight - containerWidth / 3) {
+                activeIndex = index;
+            }
+        });
+
+        dots.forEach((dot, index) => dot.classList.toggle('active', index === activeIndex));
+    }
+
+    function initReviewScroll() {
+        if (!reviewScrollContainer) return;
         let scrollTimeout;
-        scrollContainer.addEventListener('scroll', () => {
+        reviewScrollContainer.addEventListener('scroll', () => {
             clearTimeout(scrollTimeout);
             scrollTimeout = setTimeout(() => {
                 updateActiveDot();
-                const scrollLeft = scrollContainer.scrollLeft;
-                const containerWidth = scrollContainer.offsetWidth;
+                const cards = reviewCardsContainer.querySelectorAll('.review-card');
+                if (!cards.length) return;
+                const containerWidth = reviewScrollContainer.offsetWidth;
                 const targetCard = Array.from(cards).find(card => {
-                    const cardLeft = card.offsetLeft - scrollContainer.offsetLeft;
+                    const cardLeft = card.offsetLeft - reviewScrollContainer.offsetLeft;
                     const cardRight = cardLeft + card.offsetWidth;
-                    return scrollLeft >= cardLeft - containerWidth / 3 && scrollLeft < cardRight - containerWidth / 3;
+                    return reviewScrollContainer.scrollLeft >= cardLeft - containerWidth / 3 &&
+                           reviewScrollContainer.scrollLeft < cardRight - containerWidth / 3;
                 });
                 if (targetCard) {
-                    const targetScroll = targetCard.offsetLeft - scrollContainer.offsetLeft;
-                    scrollContainer.scrollTo({
-                        left: targetScroll,
-                        behavior: 'smooth'
-                    });
+                    const targetScroll = targetCard.offsetLeft - reviewScrollContainer.offsetLeft;
+                    reviewScrollContainer.scrollTo({ left: targetScroll, behavior: 'smooth' });
                 }
             }, 80);
         });
 
-        window.addEventListener('resize', () => {
-            updateActiveDot();
-        });
+        window.addEventListener('resize', updateActiveDot);
     }
 
     const bannerWrapper = document.getElementById('bannerWrapper');
     if (bannerWrapper) {
         window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * 0.3;
-            bannerWrapper.style.transform = `translateY(${rate}px)`;
+            bannerWrapper.style.transform = `translateY(${window.pageYOffset * 0.3}px)`;
         }, { passive: true });
     }
 
-    const repoImages = document.querySelectorAll('.review-bg-image');
-    repoImages.forEach(img => {
-        if (img.complete) {
-            img.classList.add('loaded');
-        } else {
-            img.addEventListener('load', () => {
-                img.classList.add('loaded');
-            });
-        }
-    });
+    function preloadImage(url) {
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.onload = resolve;
+            img.onerror = resolve;
+            img.src = url;
+        });
+    }
 
-    applyLanguage('id');
+    function preloadVideo(videoElement) {
+        return new Promise((resolve) => {
+            if (videoElement.readyState >= 3) {
+                resolve();
+            } else {
+                videoElement.addEventListener('canplay', resolve, { once: true });
+                videoElement.load();
+            }
+        });
+    }
+
+    async function preloadAll() {
+        try {
+            const response = await fetch('project.json');
+            if (!response.ok) throw new Error('Gagal memuat project.json');
+            const data = await response.json();
+            allProjects = data.flatMap(category => category.items);
+
+            const imageUrls = allProjects.map(p => p.image);
+            const preloadPromises = imageUrls.map(url => preloadImage(url));
+            preloadPromises.push(preloadVideo(video));
+
+            await Promise.all(preloadPromises);
+        } catch (err) {
+            console.error('Preload gagal:', err);
+        } finally {
+            loadingScreen.classList.add('fade-out');
+            setTimeout(() => {
+                if (loadingScreen) loadingScreen.style.display = 'none';
+                applyLanguage('id');
+                renderReviewCards(allProjects);
+                updateActiveDot();
+                initReviewScroll();
+            }, 500);
+        }
+    }
+
+    preloadAll();
 })();
