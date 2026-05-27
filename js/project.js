@@ -8,7 +8,9 @@
     const readmeTitle = document.getElementById('readmeTitle');
     const readmeBody = document.getElementById('readmeBody');
     const readmeClose = document.getElementById('readmeClose');
+    const loadingScreen = document.getElementById('loadingScreen');
     let currentLang = 'id';
+    let allProjects = [];
 
     const translations = {
         id: {
@@ -37,116 +39,6 @@
         }
     };
 
-    const projectsData = [
-        {
-            category: { id: 'Alat', en: 'Tools' },
-            description: { id: 'Alat produktivitas dan pengembangan', en: 'Productivity and development tools' },
-            items: [
-                { 
-                    name: 'Tocket', desc: {
-                        id: 'Aplikasi pesan real‑time modern', en: 'Modern real‑time messaging app' },
-                        tags: ['cryptography', 'requests', 'rich', 'prompt_toolkit', 'inquirer'],
-                        image: 'https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/tocket.png',
-                        repo: 'neveerlabs/Tocket'
-                },
-                {
-                    name: 'OSM', desc: {
-                        id: 'CLI ringan untuk mengelola repositori', en: 'Lightweight CLI to manage repos' },
-                        tags: ['inquirer', 'mysql2'],
-                        image: 'https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/OSM.png',
-                        repo: 'neveerlabs/OSM'
-                },
-                {
-                    name: 'Fuzzer', desc: {
-                        id: 'Web fuzzer untuk penemuan endpoint', en: 'Web fuzzer for endpoint discovery' },
-                        tags: ['requests', 'colorama', 'pyyaml'],
-                        image: 'https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/fuzzer.png',
-                        repo: 'neveerlabs/fuzzer'
-                },
-                {
-                    name: 'Interface', desc: {
-                        id: `Alat Bantu Pengujian Jaringan pribadi`, en: `Internal Network Testing Tool` },
-                        tags: [`subprocess`, `re`, `sys`, `os`, `socket`, `fcntl`, `struct`, `platform`, `Thread`, `Queue`, `time`, `signal`, `questionary`, `arp-scan`, `nmap`, `curl`, `ethtool`, `iproute2`, `iwgetid`, `sudo`, `nmcli`],
-                        image: `https://raw.githubusercontent.com/neveerlabs/mylink/48c1869dd02eaea2b4a1db9ddaa125157ec23cb7/image/Interface.png`,
-                        repo: `neveerlabs/Interface`
-                }
-            ]
-        },
-        {
-            category: { id: 'Toko Digital', en: 'E‑commerce' },
-            description: { id: 'Platform jual beli dan toko online', en: 'Online store and marketplace platforms' },
-            items: [
-                {
-                    name: 'Sentral Plastik', desc: {
-                        id: 'Toko Plastik online modern', en: 'Modern online store template' },
-                        tags: ['bcrypt', 'cors', 'dotenv', 'express', 'express-mysql-session', 'express-session', 'multer', 'mysql2', 'passport', 'passport-google-oauth20', 'web-push', 'Node'],
-                        image: 'https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/logo.jpg',
-                        repo: 'neveerlabs/sentralplastik'
-                },
-                {
-                    name: 'Cartify', desc: {
-                        id: 'Keranjang belanja headless', en: 'Headless shopping cart' },
-                        tags: ['Vue', 'Node', 'MongoDB'],
-                        image: 'https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/logo.jpg',
-                        repo: 'neveerlabs/cartify'
-                }
-            ]
-        },
-        {
-            category: { id: 'Komunitas', en: 'Community' },
-            description: { id: 'Proyek sosial dan forum', en: 'Social and forum projects' },
-            items: [
-                {
-                    name: 'Riyadh Community\'s', desc: {
-                        id: 'Forum diskusi ringan', en: 'Lightweight discussion forum' },
-                        tags: ['Laravel', 'Vue.js', 'mysql2'],
-                        image: 'https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/logo.jpg',
-                        repo: ''
-                },
-                {
-                    name: 'QR Studio', desc: {
-                        id: 'Sistem Absensi Berbasis QR Code', en: `QR Code-Based Attendance System` },
-                        tags: [`express`, `mysql2`, `cors`, `dotenv`],
-                        image: 'https://raw.githubusercontent.com/neveerlabs/mylink/3a913e612dea74302dc009df10daef7de740f7a7/image/QR-Studio.png',
-                        repo: 'neveerlabs/QR-Studio'
-                },
-                {
-                    name: `Kitabku`, desc: {
-                        id: ``, en: `` },
-                        tags: [`HTML5`, `CSS3`,`JavaScript (ES6)`, `PrayTimes.js`, `OpenStreetMap`, `Google Fonts`, `Amiri`, `Inter`, `Font Awesome 6.`],
-                        image: `https://raw.githubusercontent.com/neveerlabs/mylink/5f0d7eef17eaf0ba3e02500150a240060b13be34/image/Kitabku.png`,
-                        repo: `neveerlabs/Kitabku`
-                }
-            ]
-        },
-        {
-            category: { id: `Permainan`, en: `Games` },
-            description: { id: `Proyek game interaktif`, en: `Interactive game projects` },
-            items: [
-                {
-                    name: `Tic Tac Toe Games`, desc: {
-                        id: `Kecerdasan Buatan Tic-Tac-Toe — Deep Q-Learning`, en: `Tic-Tac-Toe AI — Deep Q-Learning` },
-                        tags: [`HTML5`, `CSS3`,`Vanilla JS (ES6+)`, `Q-Learning`, `Canvas 2D`, `IndexedDB`],
-                        image: `https://raw.githubusercontent.com/neveerlabs/mylink/633ca466214ea1d20036651841b8702276e5f4ea/image/Tic-Tac-Toe.png`,
-                        repo: `neveerlabs/Tic-Tac-Toe`
-                }
-            ]
-        },
-        {
-            category: { id: `Eksperimen Web`, en: `Web Experiments` },
-            description: { id: ``, en: `` },
-            items: [
-                {
-                    name: `ChronoDeck`, desc: {
-                        id: `Eksplorasi teknologi web modern — dari visual 3D, shader real‑time, Web Audio, hingga integrasi API publik. Setiap proyek adalah playground untuk ide dan pendekatan baru.`, en: `Exploring modern web technologies — from 3D visuals, real‑time shaders, Web Audio, to public API integrations. Each project is a playground for new ideas and approaches.` },
-                        tags: [`HTML5`, `CSS3`, `JavaScript ES6 Modules`, `Three.js`, `Web Audio API`, `Aladhan Prayer API`, `Geolocation API`, `Font Awesome 6`],
-                        image: `https://raw.githubusercontent.com/neveerlabs/mylink/5f0d7eef17eaf0ba3e02500150a240060b13be34/image/ChronoDeck.png`,
-                        repo: `neveerlabs/ChronoDeck`
-                }
-            ]
-        }
-    ];
-
     function applyLanguage(lang) {
         currentLang = lang;
         if (langBadge) langBadge.textContent = lang === 'id' ? 'ID' : 'EN';
@@ -162,7 +54,7 @@
     function renderProjects() {
         if (!projectContent) return;
         let html = '';
-        projectsData.forEach(section => {
+        allProjects.forEach(section => {
             const catTitle = section.category[currentLang] || section.category.id;
             const catDesc = section.description[currentLang] || section.description.id;
             html += `<div class="project-section">`;
@@ -191,7 +83,6 @@
         const carousels = document.querySelectorAll('.carousel-scroll');
         carousels.forEach(scroll => {
             const cards = scroll.querySelectorAll('.project-card');
-            const container = scroll.parentElement;
             const updateActiveCard = () => {
                 const containerRect = scroll.getBoundingClientRect();
                 const centerX = containerRect.left + containerRect.width / 2;
@@ -242,8 +133,7 @@
             if (!response.ok) throw new Error('No README');
             const data = await response.json();
             const content = atob(data.content);
-            const markdown = content;
-            const html = marked.parse(markdown);
+            const html = marked.parse(content);
             readmeBody.innerHTML = html;
         } catch (err) {
             readmeBody.innerHTML = `<div class="readme-loading">${translations[currentLang].noReadme}</div>`;
@@ -267,9 +157,40 @@
     readmeClose.addEventListener('click', () => readmeModalOverlay.classList.remove('active'));
     readmeModalOverlay.addEventListener('click', e => { if (e.target === readmeModalOverlay) readmeModalOverlay.classList.remove('active'); });
 
+    function preloadImage(url) {
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.onload = resolve;
+            img.onerror = resolve;
+            img.src = url;
+        });
+    }
+
+    async function fetchProjects() {
+        try {
+            const response = await fetch('../project.json');
+            if (!response.ok) throw new Error('Gagal memuat project.json');
+            const data = await response.json();
+            allProjects = data;
+
+            const imageUrls = data.flatMap(cat => cat.items.map(item => item.image));
+            await Promise.all(imageUrls.map(url => preloadImage(url)));
+
+            renderProjects();
+        } catch (err) {
+            console.error('Gagal memuat proyek:', err);
+        } finally {
+            loadingScreen.classList.add('fade-out');
+            setTimeout(() => {
+                if (loadingScreen) loadingScreen.style.display = 'none';
+            }, 500);
+        }
+    }
+
     const style = document.createElement('style');
     style.textContent = `.project-card, .header-back, .menu-item, .menu-toggle, .github-link-btn, .readme-close { -webkit-tap-highlight-color: transparent; }`;
     document.head.appendChild(style);
 
     applyLanguage('id');
+    fetchProjects();
 })();
