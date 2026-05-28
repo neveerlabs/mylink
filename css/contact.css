@@ -349,11 +349,11 @@ body {
 .contact-info-grid {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     margin-bottom: 32px;
 }
 
-.contact-info-item {
+.contact-info-btn {
     display: flex;
     align-items: center;
     gap: 14px;
@@ -361,16 +361,24 @@ body {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 24px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
     transition: all 0.2s;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    text-align: left;
 }
 
-.contact-info-item:hover {
+.contact-info-btn:hover {
     background: rgba(106, 17, 203, 0.1);
     border-color: rgba(106, 17, 203, 0.3);
     transform: translateX(4px);
 }
 
-.contact-info-item i {
+.contact-info-btn i:first-child {
     font-size: 22px;
     color: #6a11cb;
     width: 36px;
@@ -380,11 +388,13 @@ body {
     justify-content: center;
     background: rgba(106, 17, 203, 0.15);
     border-radius: 50%;
+    flex-shrink: 0;
 }
 
-.contact-info-item div {
+.contact-info-btn div {
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 
 .info-label {
@@ -394,15 +404,16 @@ body {
     margin-bottom: 2px;
 }
 
-.contact-info-item a, .contact-info-item span {
-    font-size: 14px;
-    font-weight: 500;
-    color: white;
-    text-decoration: none;
+.arrow-icon {
+    font-size: 18px;
+    opacity: 0.7;
+    transition: transform 0.2s, opacity 0.2s;
+    flex-shrink: 0;
 }
 
-.contact-info-item a:hover {
-    text-decoration: underline;
+.contact-info-btn:hover .arrow-icon {
+    transform: translateX(4px);
+    opacity: 1;
 }
 
 .contact-form {
