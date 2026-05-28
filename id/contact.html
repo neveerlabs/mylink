@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Kontak · Neverlabs</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/neveerlabs/mylink/main/image/tab.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+<div id="loadingScreen">
+    <div class="loading-character-container">
+        <div class="loading-character">
+            <div class="head"></div>
+            <div class="body"></div>
+            <div class="arm left"></div>
+            <div class="arm right"></div>
+            <div class="leg left"></div>
+            <div class="leg right"></div>
+        </div>
+    </div>
+    <p class="loading-text">Memuat halaman...</p>
+</div>
+<div class="app">
+    <header class="capsule-header">
+        <a href="../index.html" class="header-back" aria-label="Kembali">
+            <i class="ri-arrow-left-line"></i>
+        </a>
+        <div class="header-title" data-i18n="pageTitle">Kontak</div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <i class="ri-more-2-fill"></i>
+        </button>
+        <div class="menu-dropdown" id="menuDropdown">
+            <a href="../index.html" class="menu-item" data-i18n="home">
+                <i class="ri-home-4-line"></i>
+                <span>Beranda</span>
+            </a>
+            <a href="about.html" class="menu-item" data-i18n="about">
+                <i class="ri-user-line"></i>
+                <span>Tentang</span>
+            </a>
+            <a href="project.html" class="menu-item" data-i18n="projects">
+                <i class="ri-folder-line"></i>
+                <span>Proyek</span>
+            </a>
+            <a href="contact.html" class="menu-item" data-i18n="contact">
+                <i class="ri-mail-line"></i>
+                <span>Kontak</span>
+            </a>
+            <div class="menu-divider"></div>
+            <button class="menu-item language-toggle" id="languageToggle">
+                <i class="ri-global-line"></i>
+                <span data-i18n="language">Bahasa</span>
+                <span class="lang-badge" id="langBadge">ID</span>
+            </button>
+        </div>
+    </header>
+    <div class="contact-content">
+        <div class="contact-card">
+            <h2 class="contact-heading" data-i18n="getInTouch">Hubungi Saya</h2>
+            <p class="contact-sub" data-i18n="contactDesc">Punya pertanyaan atau ingin kolaborasi? Jangan ragu untuk mengirim pesan.</p>
+            <div class="contact-info-grid">
+                <div class="contact-info-item">
+                    <i class="ri-mail-line"></i>
+                    <div>
+                        <span class="info-label" data-i18n="emailLabel">Email</span>
+                        <a href="mailto:userlinuxorg@gmail.com">userlinuxorg@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <i class="ri-telegram-fill"></i>
+                    <div>
+                        <span class="info-label" data-i18n="telegramLabel">Telegram</span>
+                        <a href="https://t.me/Neverlabs" target="_blank">@Neverlabs</a>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <i class="ri-discord-fill"></i>
+                    <div>
+                        <span class="info-label" data-i18n="discordLabel">Discord</span>
+                        <span>neverlabs#291</span>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Masukkan nama..." data-i18n="namePlaceholder">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Masukkan email..." data-i18n="emailPlaceholder">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="subject" placeholder="Masukkan subjek..." data-i18n="subjectPlaceholder">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="4" placeholder="Masukkan pesan..." data-i18n="messagePlaceholder"></textarea>
+                </div>
+                <button type="submit" class="submit-btn" data-i18n="sendBtn">Kirim Pesan</button>
+            </form>
+        </div>
+        <div class="footer-note">
+            <span data-i18n="footerText">© 2026 Neverlabs • All rights reserved.</span>
+        </div>
+    </div>
+</div>
+<div class="notification-overlay" id="notificationOverlay">
+    <div class="notification-popup">
+        <i class="notification-icon" id="notificationIcon"></i>
+        <p class="notification-message" id="notificationMessage"></p>
+        <button class="notification-close-btn" id="notificationCloseBtn" data-i18n="closeNotification">Tutup</button>
+    </div>
+</div>
+<script src="../js/contact.js"></script>
+</body>
+</html>
