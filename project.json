@@ -83,13 +83,6 @@
         "tags": ["bcrypt", "cors", "dotenv", "express", "express-mysql-session", "express-session", "multer", "mysql2", "passport", "passport-google-oauth20", "web-push", "Node"],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/logo.jpg",
         "repo": "neveerlabs/sentralplastik"
-      },
-      {
-        "name": "Cartify",
-        "desc": { "id": "Keranjang belanja headless", "en": "Headless shopping cart" },
-        "tags": ["Vue", "Node", "MongoDB"],
-        "image": "https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/logo.jpg",
-        "repo": "neveerlabs/cartify"
       }
     ]
   },
