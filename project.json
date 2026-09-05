@@ -1,13 +1,19 @@
 [
   {
-    "category": { "id": "Alat", "en": "Tools" },
-    "description": { "id": "Alat produktivitas dan pengembangan", "en": "Productivity and development tools" },
+    "category": {
+      "id": "Alat",
+      "en": "Tools"
+    },
+    "description": {
+      "id": "Alat produktivitas dan pengembangan",
+      "en": "Productivity and development tools"
+    },
     "items": [
       {
-        "name": "Termux Config",
+        "name": "TermOS",
         "desc": {
-          "id": "Konfigurasi Zsh untuk Termux – dilengkapi autosuggestions, syntax highlighting, prompt kustom dengan informasi direktori dan virtual env, serta history yang bersih. Mendukung warna, ikon, dan key binding yang ergonomis.",
-          "en": "Zsh configuration for Termux – featuring autosuggestions, syntax highlighting, custom prompt with directory and virtual env info, and clean history. Supports colors, icons, and ergonomic key bindings."
+          "id": "Konfigurasi Zsh untuk Termux â dilengkapi autosuggestions, syntax highlighting, prompt kustom dengan informasi direktori dan virtual env, serta history yang bersih. Mendukung warna, ikon, dan key binding yang ergonomis.",
+          "en": "Zsh configuration for Termux â featuring autosuggestions, syntax highlighting, custom prompt with directory and virtual env info, and clean history. Supports colors, icons, and ergonomic key bindings."
         },
         "tags": [
           "zsh",
@@ -19,23 +25,23 @@
           "key-bindings"
         ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/main/image/Termux.jpg",
-        "repo": "neveerlabs/Termux-Config"
+        "repo": "neveerlabs/TermOS"
       },
       {
         "name": "BG-Remover",
         "desc": {
-          "id": "Penghapus latar belakang gambar berbasis AI dengan dua versi: `remove.py` (ringan, Tkinter, 4 model) dan `remover.py` (pro, CustomTkinter, 10+ model termasuk BiRefNet, fitur edge refinement, auto enhance, denoise, logging real‑time). Sepenuhnya offline, tidak mengirim data ke server.",
-          "en": "AI‑powered background remover with two versions: `remove.py` (lightweight, Tkinter, 4 models) and `remover.py` (pro, CustomTkinter, 10+ models including BiRefNet, edge refinement, auto enhance, denoise, real‑time logging). Fully offline, no data sent to server."
+          "id": "Penghapus latar belakang gambar berbasis AI dengan dua versi: `remove.py` (ringan, Tkinter, 4 model) dan `remover.py` (pro, CustomTkinter, 10+ model termasuk BiRefNet, fitur edge refinement, auto enhance, denoise, logging realâtime). Sepenuhnya offline, tidak mengirim data ke server.",
+          "en": "AIâpowered background remover with two versions: `remove.py` (lightweight, Tkinter, 4 models) and `remover.py` (pro, CustomTkinter, 10+ models including BiRefNet, edge refinement, auto enhance, denoise, realâtime logging). Fully offline, no data sent to server."
         },
         "tags": [
           "rembg",
-          "U2‑Net",
+          "U2âNet",
           "BiRefNet",
           "CustomTkinter",
           "Tkinter",
           "OpenCV",
           "Pillow",
-          "scikit‑image",
+          "scikitâimage",
           "AI",
           "background removal",
           "offline"
@@ -45,114 +51,183 @@
       },
       {
         "name": "Tocket",
-        "desc": { "id": "Aplikasi pesan real‑time modern", "en": "Modern real‑time messaging app" },
-        "tags": ["cryptography", "requests", "rich", "prompt_toolkit", "inquirer"],
+        "desc": {
+          "id": "Aplikasi pesan realâtime modern",
+          "en": "Modern realâtime messaging app"
+        },
+        "tags": [
+          "cryptography",
+          "requests",
+          "rich",
+          "prompt_toolkit",
+          "inquirer"
+        ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/tocket.png",
         "repo": "neveerlabs/Tocket"
       },
       {
         "name": "OSM",
-        "desc": { "id": "CLI ringan untuk mengelola repositori", "en": "Lightweight CLI to manage repos" },
-        "tags": ["inquirer", "mysql2"],
+        "desc": {
+          "id": "CLI ringan untuk mengelola repositori",
+          "en": "Lightweight CLI to manage repos"
+        },
+        "tags": [
+          "inquirer",
+          "mysql2"
+        ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/OSM.png",
         "repo": "neveerlabs/OSM"
       },
       {
         "name": "Fuzzer",
-        "desc": { "id": "Web fuzzer untuk penemuan endpoint", "en": "Web fuzzer for endpoint discovery" },
-        "tags": ["requests", "colorama", "pyyaml"],
+        "desc": {
+          "id": "Web fuzzer untuk penemuan endpoint",
+          "en": "Web fuzzer for endpoint discovery"
+        },
+        "tags": [
+          "requests",
+          "colorama",
+          "pyyaml"
+        ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/fuzzer.png",
         "repo": "neveerlabs/fuzzer"
       },
       {
         "name": "Interface",
-        "desc": { "id": "Alat Bantu Pengujian Jaringan pribadi", "en": "Internal Network Testing Tool" },
-        "tags": ["subprocess", "re", "sys", "os", "socket", "fcntl", "struct", "platform", "Thread", "Queue", "time", "signal", "questionary", "arp-scan", "nmap", "curl", "ethtool", "iproute2", "iwgetid", "sudo", "nmcli"],
+        "desc": {
+          "id": "Alat Bantu Pengujian Jaringan pribadi",
+          "en": "Internal Network Testing Tool"
+        },
+        "tags": [
+          "subprocess",
+          "re",
+          "sys",
+          "os",
+          "socket",
+          "fcntl",
+          "struct",
+          "platform",
+          "Thread",
+          "Queue",
+          "time",
+          "signal",
+          "questionary",
+          "arp-scan",
+          "nmap",
+          "curl",
+          "ethtool",
+          "iproute2",
+          "iwgetid",
+          "sudo",
+          "nmcli"
+        ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/48c1869dd02eaea2b4a1db9ddaa125157ec23cb7/image/Interface.png",
         "repo": "neveerlabs/Interface"
       }
     ]
   },
   {
-    "category": { "id": "Toko Digital", "en": "E‑commerce" },
-    "description": { "id": "Platform jual beli dan toko online", "en": "Online store and marketplace platforms" },
+    "category": {
+      "id": "Komunitas",
+      "en": "Community"
+    },
+    "description": {
+      "id": "Proyek sosial dan forum",
+      "en": "Social and forum projects"
+    },
     "items": [
-      {
-        "name": "Sentral Plastik",
-        "desc": { "id": "Toko Plastik online modern", "en": "Modern online store template" },
-        "tags": ["bcrypt", "cors", "dotenv", "express", "express-mysql-session", "express-session", "multer", "mysql2", "passport", "passport-google-oauth20", "web-push", "Node"],
-        "image": "https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/logo.jpg",
-        "repo": "neveerlabs/sentralplastik"
-      }
-    ]
-  },
-  {
-    "category": { "id": "Komunitas", "en": "Community" },
-    "description": { "id": "Proyek sosial dan forum", "en": "Social and forum projects" },
-    "items": [
-      {
-        "name": "My Diary",
-        "desc": {
-          "id": "Aplikasi jurnal digital pribadi dengan dukungan posting teks, gambar/video, like, komentar, dan pencarian real‑time. Dibangun dengan Vue 3 di frontend dan Express + MySQL di backend. Fitur double‑click like animasi, autoplay video saat scroll, serta rate limiting untuk keamanan.",
-          "en": "Personal digital diary app with text, image/video posts, likes, comments, and real‑time search. Built with Vue 3 frontend and Express + MySQL backend. Features double‑click like animation, video autoplay on scroll, and rate limiting for security."
-        },
-        "tags": [
-          "Vue 3",
-          "Express.js",
-          "MySQL2",
-          "Axios",
-          "CORS",
-          "Helmet",
-          "express-rate-limit",
-          "Intersection Observer API"
-        ],
-        "image": "https://raw.githubusercontent.com/neveerlabs/mylink/main/image/Diary.png",
-        "repo": "neveerlabs/Diary"
-      },
-      {
-        "name": "Riyadh Community's",
-        "desc": { "id": "Forum diskusi ringan", "en": "Lightweight discussion forum" },
-        "tags": ["Laravel", "Vue.js", "mysql2"],
-        "image": "https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/logo.jpg",
-        "repo": ""
-      },
       {
         "name": "QR Studio",
-        "desc": { "id": "Sistem Absensi Berbasis QR Code", "en": "QR Code-Based Attendance System" },
-        "tags": ["express", "mysql2", "cors", "dotenv"],
+        "desc": {
+          "id": "Sistem Absensi Berbasis QR Code",
+          "en": "QR Code-Based Attendance System"
+        },
+        "tags": [
+          "express",
+          "mysql2",
+          "cors",
+          "dotenv"
+        ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/3a913e612dea74302dc009df10daef7de740f7a7/image/QR-Studio.png",
         "repo": "neveerlabs/QR-Studio"
       },
       {
         "name": "Kitabku",
-        "desc": { "id": "", "en": "" },
-        "tags": ["HTML5", "CSS3", "JavaScript (ES6)", "PrayTimes.js", "OpenStreetMap", "Google Fonts", "Amiri", "Inter", "Font Awesome 6."],
+        "desc": {
+          "id": "",
+          "en": ""
+        },
+        "tags": [
+          "HTML5",
+          "CSS3",
+          "JavaScript (ES6)",
+          "PrayTimes.js",
+          "OpenStreetMap",
+          "Google Fonts",
+          "Amiri",
+          "Inter",
+          "Font Awesome 6."
+        ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/5f0d7eef17eaf0ba3e02500150a240060b13be34/image/Kitabku.png",
         "repo": "neveerlabs/Kitabku"
       }
     ]
   },
   {
-    "category": { "id": "Permainan", "en": "Games" },
-    "description": { "id": "Proyek game interaktif", "en": "Interactive game projects" },
+    "category": {
+      "id": "Permainan",
+      "en": "Games"
+    },
+    "description": {
+      "id": "Proyek game interaktif",
+      "en": "Interactive game projects"
+    },
     "items": [
       {
         "name": "Tic Tac Toe Games",
-        "desc": { "id": "Kecerdasan Buatan Tic-Tac-Toe — Deep Q-Learning", "en": "Tic-Tac-Toe AI — Deep Q-Learning" },
-        "tags": ["HTML5", "CSS3", "Vanilla JS (ES6+)", "Q-Learning", "Canvas 2D", "IndexedDB"],
+        "desc": {
+          "id": "Kecerdasan Buatan Tic-Tac-Toe â Deep Q-Learning",
+          "en": "Tic-Tac-Toe AI â Deep Q-Learning"
+        },
+        "tags": [
+          "HTML5",
+          "CSS3",
+          "Vanilla JS (ES6+)",
+          "Q-Learning",
+          "Canvas 2D",
+          "IndexedDB"
+        ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/633ca466214ea1d20036651841b8702276e5f4ea/image/Tic-Tac-Toe.png",
         "repo": "neveerlabs/Tic-Tac-Toe"
       }
     ]
   },
   {
-    "category": { "id": "Eksperimen Web", "en": "Web Experiments" },
-    "description": { "id": "", "en": "" },
+    "category": {
+      "id": "Eksperimen Web",
+      "en": "Web Experiments"
+    },
+    "description": {
+      "id": "",
+      "en": ""
+    },
     "items": [
       {
         "name": "ChronoDeck",
-        "desc": { "id": "Eksplorasi teknologi web modern — dari visual 3D, shader real‑time, Web Audio, hingga integrasi API publik. Setiap proyek adalah playground untuk ide dan pendekatan baru.", "en": "Exploring modern web technologies — from 3D visuals, real‑time shaders, Web Audio, to public API integrations. Each project is a playground for new ideas and approaches." },
-        "tags": ["HTML5", "CSS3", "JavaScript ES6 Modules", "Three.js", "Web Audio API", "Aladhan Prayer API", "Geolocation API", "Font Awesome 6"],
+        "desc": {
+          "id": "Eksplorasi teknologi web modern â dari visual 3D, shader realâtime, Web Audio, hingga integrasi API publik. Setiap proyek adalah playground untuk ide dan pendekatan baru.",
+          "en": "Exploring modern web technologies â from 3D visuals, realâtime shaders, Web Audio, to public API integrations. Each project is a playground for new ideas and approaches."
+        },
+        "tags": [
+          "HTML5",
+          "CSS3",
+          "JavaScript ES6 Modules",
+          "Three.js",
+          "Web Audio API",
+          "Aladhan Prayer API",
+          "Geolocation API",
+          "Font Awesome 6"
+        ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/5f0d7eef17eaf0ba3e02500150a240060b13be34/image/ChronoDeck.png",
         "repo": "neveerlabs/ChronoDeck"
       }
