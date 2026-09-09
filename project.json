@@ -32,7 +32,7 @@
       {
         "name": "Tocket",
         "desc": {
-          "id": "Aplikasi pesan realâtime modern",
+          "id": "command-line interface modern, aman, dan terstruktur untuk mengelola repositori GitHub langsung dari terminal.",
           "en": "Modern realâtime messaging app"
         },
         "tags": [
