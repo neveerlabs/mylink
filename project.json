@@ -48,21 +48,6 @@
         "url": ""
       },
       {
-        "name": "OSM",
-        "desc": {
-          "id": "CLI ringan untuk mengelola repositori",
-          "en": "Lightweight CLI to manage repos"
-        },
-        "tags": [
-          "inquirer",
-          "mysql2"
-        ],
-        "image": "https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/OSM.png",
-        "repo": "neveerlabs/OSM",
-        "readme": "",
-        "url": ""
-      },
-      {
         "name": "Fuzzer",
         "desc": {
           "id": "alat penetration testing untuk model bahasa besar (LLM) yang dirancang khusus untuk menguji ketahanan filter etika dan keamanan AI.",
@@ -75,6 +60,21 @@
         ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/fuzzer.png",
         "repo": "neveerlabs/fuzzer",
+        "readme": "",
+        "url": ""
+      },
+      {
+        "name": "OSM",
+        "desc": {
+          "id": "CLI ringan untuk mengelola repositori",
+          "en": "Lightweight CLI to manage repos"
+        },
+        "tags": [
+          "inquirer",
+          "mysql2"
+        ],
+        "image": "https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/OSM.png",
+        "repo": "neveerlabs/OSM",
         "readme": "",
         "url": ""
       },
