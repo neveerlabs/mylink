@@ -65,7 +65,7 @@
       {
         "name": "Fuzzer",
         "desc": {
-          "id": "Web fuzzer untuk penemuan endpoint",
+          "id": "alat penetration testing untuk model bahasa besar (LLM) yang dirancang khusus untuk menguji ketahanan filter etika dan keamanan AI.",
           "en": "Web fuzzer for endpoint discovery"
         },
         "tags": [
