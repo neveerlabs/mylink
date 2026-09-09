@@ -10,29 +10,6 @@
     },
     "items": [
       {
-        "name": "BG-Remover",
-        "desc": {
-          "id": "Penghapus latar belakang gambar berbasis AI dengan dua versi: `remove.py` (ringan, Tkinter, 4 model) dan `remover.py` (pro, CustomTkinter, 10+ model termasuk BiRefNet, fitur edge refinement, auto enhance, denoise, logging realâtime). Sepenuhnya offline, tidak mengirim data ke server.",
-          "en": "AIâpowered background remover with two versions: `remove.py` (lightweight, Tkinter, 4 models) and `remover.py` (pro, CustomTkinter, 10+ models including BiRefNet, edge refinement, auto enhance, denoise, realâtime logging). Fully offline, no data sent to server."
-        },
-        "tags": [
-          "rembg",
-          "U2âNet",
-          "BiRefNet",
-          "CustomTkinter",
-          "Tkinter",
-          "OpenCV",
-          "Pillow",
-          "scikitâimage",
-          "AI",
-          "background removal",
-          "offline"
-        ],
-        "image": "https://raw.githubusercontent.com/neveerlabs/mylink/main/image/BG-Remover.png",
-        "repo": "neveerlabs/BG-Remover",
-        "readme": ""
-      },
-      {
         "name": "TermOS",
         "desc": {
           "id": "Konfigurasi Zsh untuk Termux â dilengkapi autosuggestions, syntax highlighting, prompt kustom dengan informasi direktori dan virtual env, serta history yang bersih. Mendukung warna, ikon, dan key binding yang ergonomis.",
@@ -49,7 +26,8 @@
         ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/main/image/Termux.jpg",
         "repo": "neveerlabs/TermOS",
-        "readme": ""
+        "readme": "",
+        "url": ""
       },
       {
         "name": "Tocket",
@@ -66,7 +44,8 @@
         ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/tocket.png",
         "repo": "neveerlabs/Tocket",
-        "readme": ""
+        "readme": "",
+        "url": ""
       },
       {
         "name": "OSM",
@@ -80,7 +59,8 @@
         ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/OSM.png",
         "repo": "neveerlabs/OSM",
-        "readme": ""
+        "readme": "",
+        "url": ""
       },
       {
         "name": "Fuzzer",
@@ -95,7 +75,8 @@
         ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/66713ce132ebb37669ced1e2f0f13395142079a2/image/fuzzer.png",
         "repo": "neveerlabs/fuzzer",
-        "readme": ""
+        "readme": "",
+        "url": ""
       },
       {
         "name": "Interface",
@@ -128,7 +109,32 @@
         ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/48c1869dd02eaea2b4a1db9ddaa125157ec23cb7/image/Interface.png",
         "repo": "neveerlabs/Interface",
-        "readme": ""
+        "readme": "",
+        "url": ""
+      },
+      {
+        "name": "BG-Remover",
+        "desc": {
+          "id": "Penghapus latar belakang gambar berbasis AI dengan dua versi: `remove.py` (ringan, Tkinter, 4 model) dan `remover.py` (pro, CustomTkinter, 10+ model termasuk BiRefNet, fitur edge refinement, auto enhance, denoise, logging realâtime). Sepenuhnya offline, tidak mengirim data ke server.",
+          "en": "AIâpowered background remover with two versions: `remove.py` (lightweight, Tkinter, 4 models) and `remover.py` (pro, CustomTkinter, 10+ models including BiRefNet, edge refinement, auto enhance, denoise, realâtime logging). Fully offline, no data sent to server."
+        },
+        "tags": [
+          "rembg",
+          "U2âNet",
+          "BiRefNet",
+          "CustomTkinter",
+          "Tkinter",
+          "OpenCV",
+          "Pillow",
+          "scikitâimage",
+          "AI",
+          "background removal",
+          "offline"
+        ],
+        "image": "https://raw.githubusercontent.com/neveerlabs/mylink/main/image/BG-Remover.png",
+        "repo": "neveerlabs/BG-Remover",
+        "readme": "",
+        "url": ""
       }
     ]
   },
@@ -156,7 +162,8 @@
         ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/3a913e612dea74302dc009df10daef7de740f7a7/image/QR-Studio.png",
         "repo": "neveerlabs/QR-Studio",
-        "readme": ""
+        "readme": "",
+        "url": ""
       },
       {
         "name": "Kitabku",
@@ -177,7 +184,8 @@
         ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/5f0d7eef17eaf0ba3e02500150a240060b13be34/image/Kitabku.png",
         "repo": "neveerlabs/Kitabku",
-        "readme": ""
+        "readme": "",
+        "url": ""
       }
     ]
   },
@@ -207,7 +215,8 @@
         ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/633ca466214ea1d20036651841b8702276e5f4ea/image/Tic-Tac-Toe.png",
         "repo": "neveerlabs/Tic-Tac-Toe",
-        "readme": ""
+        "readme": "",
+        "url": ""
       }
     ]
   },
@@ -239,7 +248,8 @@
         ],
         "image": "https://raw.githubusercontent.com/neveerlabs/mylink/5f0d7eef17eaf0ba3e02500150a240060b13be34/image/ChronoDeck.png",
         "repo": "neveerlabs/ChronoDeck",
-        "readme": ""
+        "readme": "",
+        "url": ""
       }
     ]
   }
